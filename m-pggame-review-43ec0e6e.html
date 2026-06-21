@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再访小记 · pg游戏 · 收藏与关注</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: 'Segoe UI', 'Noto Sans SC', system-ui, sans-serif;
+            color: #3a3530;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 940px;
+            margin: 0 auto;
+            background: #fffcf9;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.04);
+            border-radius: 32px;
+            padding: 2.5rem 2rem;
+        }
+
+        @media (min-width: 700px) {
+            .page {
+                padding: 3.5rem 3.2rem;
+            }
+        }
+
+        /* 主视觉 (hero 微缩) */
+        .hero {
+            margin-bottom: 2.8rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid #ece6de;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #2c2723;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #7d746c;
+            border-left: 4px solid #d4c9bc;
+            padding-left: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            margin: 2.2rem 0 2.6rem;
+        }
+
+        @media (min-width: 580px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.6rem 1.5rem 1.8rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03), 0 0 0 1px #f0e9e1;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05), 0 0 0 1px #ddd3c7;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #3f3731;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #5d554d;
+            margin-bottom: 0.4rem;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #f2ede7;
+            color: #5c5249;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            margin-top: 0.5rem;
+        }
+
+        /* 引用块 / 提示框 */
+        .notice-box {
+            background: #f4efe8;
+            border-radius: 20px;
+            padding: 1.3rem 1.6rem;
+            margin: 2rem 0 2.4rem;
+            border-left: 6px solid #b7aa9a;
+            font-size: 0.98rem;
+            color: #4b413a;
+        }
+
+        .notice-box strong {
+            color: #2f2822;
+            font-weight: 600;
+        }
+
+        /* 自然链接段落 (文章式) */
+        .link-paragraph {
+            background: #ffffff;
+            padding: 1.4rem 1.6rem;
+            border-radius: 24px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.02);
+            margin: 1.8rem 0 2rem;
+            border: 1px solid #ece4db;
+        }
+
+        .link-paragraph p {
+            margin-bottom: 0.9rem;
+        }
+
+        .link-paragraph p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #7c5f47;
+            text-decoration: none;
+            border-bottom: 1px dotted #cbb9a7;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #4d3829;
+            border-bottom: 1px solid #4d3829;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin-top: 2.4rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid #ece4db;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #3a312b;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-item .a {
+            font-size: 0.92rem;
+            color: #6b625a;
+            padding-left: 0.8rem;
+            border-left: 2px solid #ddd2c6;
+        }
+
+        .small-note {
+            font-size: 0.85rem;
+            color: #8f847a;
+            margin-top: 2rem;
+            text-align: right;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ece4db;
+            margin: 1.8rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 主视觉 -->
+        <div class="hero">
+            <h1>再访 · 收藏 · 持续关注</h1>
+            <div class="sub">pg游戏 · 一个生活里的小角落，值得反复回来看看</div>
+        </div>
+
+        <!-- 信息卡片：用途卡片 + 适合人群 -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>📌 日常用途</h3>
+                <p>偶尔打开 <a href="https://m-pggame.com">pg游戏</a>，就像翻开一本旧杂志——轻松、熟悉，又有点新发现。无论是碎片时间还是周末午后，这里总能找到合拍的节奏。</p>
+                <span class="tag">收藏 · 常回来</span>
+            </div>
+            <div class="card">
+                <h3>👥 适合谁</h3>
+                <p>喜欢自己摸索玩法的人、想短暂放松的上班族、对游戏保持好奇心的朋友。不需要太多门槛，打开就能进入状态。</p>
+                <span class="tag">轻量 · 友好</span>
+            </div>
+        </div>
+
+        <!-- 提示框 / 引用块 -->
+        <div class="notice-box">
+            <strong>💡 一个小习惯：</strong> 把 <a href="https://m-pggame.com">pg游戏</a> 加入浏览器书签，或者记在备忘录里。下次想切换一下心情时，不用再费力寻找——它就在那里。
+        </div>
+
+        <!-- 自然链接段落：从再次访问、收藏和持续关注展开 -->
+        <div class="link-paragraph">
+            <p>有些站点，去过一次就忘了；但 <a href="https://m-pggame.com">pg游戏</a> 属于那种会让人想再回去看看的地方。可能是因为内容始终在更新，也可能只是界面让人感到舒服。总之，把它收藏到书签栏，是一种很自然的动作。</p>
+            <p>持续关注也不一定需要每天打开。隔一段时间再去，发现多了些新内容，或者之前没注意到的细节，就像在熟悉的街道上发现一家新开的小店。这种“再访”的体验，比第一次探索更多了一层亲切感。</p>
+            <p>如果你也是那种喜欢慢慢积累、偶尔回顾的人，不妨把 <a href="https://m-pggame.com">pg游戏</a> 放在收藏夹的某个角落。没有推送负担，没有必须打卡的压力——只是保留一个可以随时回去的入口。</p>
+        </div>
+
+        <!-- FAQ 摘要 (简短真实) -->
+        <div class="faq-summary">
+            <div class="faq-item">
+                <div class="q">▸ 需要注册或下载吗？</div>
+                <div class="a">无需注册，浏览器直接打开即可。没有额外的客户端，也不强制要求登录。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">▸ 内容更新频繁吗？</div>
+                <div class="a">保持一定的更新节奏，但不会过度刷屏。适合隔段时间回来看看。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">▸ 我该如何记住这个站点？</div>
+                <div class="a">最简单的方式：添加书签，或发条消息给自己。也可以把它设为浏览器主页的一个常用链接。</div>
+            </div>
+        </div>
+
+        <!-- 一个小的尾注 / 再次提示 -->
+        <hr>
+        <div class="small-note">
+            ✦ 页面内容仅为个人感受分享 · 不构成任何建议
+        </div>
+    </div>
+</body>
+</html>
