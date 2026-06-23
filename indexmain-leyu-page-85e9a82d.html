@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐鱼 · 资料整理与信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f6f0;
+      font-family: "Georgia", "Noto Serif SC", "Source Han Serif SC", "Times New Roman", serif;
+      color: #2d2a24;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fcfbf8;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.02);
+      padding: 2.5rem 2rem 3.5rem;
+    }
+
+    /* 杂志风格横幅 */
+    .hero {
+      margin: -2.5rem -2rem 2.8rem;
+      padding: 3rem 2rem 3.2rem;
+      background: #2d2a24;
+      color: #f4efe6;
+      border-radius: 28px 28px 0 0;
+      background-image: radial-gradient(circle at 20% 30%, rgba(255,255,240,0.04) 0%, transparent 60%);
+      text-align: center;
+    }
+
+    .hero-sub {
+      font-size: 0.85rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 1.2rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+      color: #e6ddd0;
+      font-family: "Noto Serif SC", serif;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0.25rem auto 0;
+      font-size: 1rem;
+      color: #b9b0a0;
+      font-style: italic;
+      border-top: 1px solid rgba(255,255,240,0.1);
+      padding-top: 0.9rem;
+      display: inline-block;
+    }
+
+    /* 背景卡片 */
+    .background-note {
+      background: #efece4;
+      padding: 1.6rem 2rem;
+      border-radius: 20px;
+      margin: 0 0 2.4rem;
+      font-size: 0.95rem;
+      color: #3d3831;
+      border-left: 4px solid #b7aa96;
+    }
+
+    .background-note strong {
+      color: #2d2a24;
+      font-weight: 600;
+    }
+
+    /* 正文段落 */
+    .section-block {
+      margin-bottom: 2.2rem;
+    }
+
+    .section-block h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 0.9rem;
+      color: #3b3630;
+      border-bottom: 1px solid #e4ddd2;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-block p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    /* 引用 / 提示框 */
+    .insight-box {
+      background: #f2efe9;
+      padding: 1.3rem 1.8rem;
+      border-radius: 18px;
+      margin: 2rem 0 2.2rem;
+      font-size: 0.95rem;
+      border: 1px solid #e5ddd1;
+      color: #3b352c;
+    }
+
+    .insight-box::before {
+      content: "▍";
+      margin-right: 8px;
+      color: #9a8b79;
+      font-size: 1.2rem;
+    }
+
+    .insight-box a {
+      color: #2d2a24;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #b7aa96;
+    }
+
+    .insight-box a:hover {
+      color: #000;
+      text-decoration-color: #8a7a64;
+    }
+
+    /* 页尾访问提示 */
+    .visit-footer {
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e4ddd2;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b6459;
+    }
+
+    .visit-footer .sig {
+      display: inline-block;
+      background: #2d2a24;
+      color: #f4efe6;
+      padding: 0.6rem 1.8rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      margin: 1rem 0 0.3rem;
+    }
+
+    .visit-footer a {
+      color: #2d2a24;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #b7aa96;
+    }
+
+    .visit-footer a:hover {
+      color: #000;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      .container {
+        padding: 1.8rem 1.2rem 2.8rem;
+        border-radius: 20px;
+      }
+      .hero {
+        margin: -1.8rem -1.2rem 2rem;
+        padding: 2.2rem 1.2rem 2.4rem;
+        border-radius: 20px 20px 0 0;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero-sub {
+        font-size: 0.7rem;
+        letter-spacing: 4px;
+      }
+      .background-note {
+        padding: 1.2rem 1.2rem;
+        margin: 0 0 1.8rem;
+      }
+      .section-block h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .container {
+        padding: 1.2rem 0.8rem 2rem;
+      }
+      .hero {
+        padding: 1.8rem 1rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 首页横幅 -->
+    <div class="hero">
+      <div class="hero-sub">资料整理 · 信息索引</div>
+      <h1>乐鱼</h1>
+      <p>从零散的记录到可用的索引</p>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="background-note">
+      <strong>关于这一索引</strong>  ·  在信息过载的年代，整理本身便是一种筛选。乐鱼关注的是如何将散落在不同载体中的资料，以一种平实、可检索的方式重新组织。这里不追求即时与速度，更在意内容的结构与可追溯性。
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="section-block">
+      <h2>一、资料整理的基本逻辑</h2>
+      <p>任何索引的起点都是对原始材料的识别与归类。在构建 <a href="https://indexmain-leyu.com">乐鱼</a> 的过程中，我们观察到一个事实：多数信息并非缺乏来源，而是缺乏有效的连接路径。因此，整理工作首先围绕“标记——分类——关联”三个步骤展开，使每一份资料都能被定位，而不是被淹没。</p>
+      <p>基于这个思路，乐鱼将常见的信息类型划分为若干基础模块，每个模块内部保持统一的字段结构，从而让跨领域检索成为可能。这种方法并不复杂，却能在长期使用中显著降低查找成本。</p>
+    </div>
+
+    <div class="section-block">
+      <h2>二、索引结构的自然生长</h2>
+      <p>索引并非一次性搭建完毕的静态框架。随着新资料的加入，原有的分类边界可能会模糊，甚至需要重新定义。乐鱼鼓励一种“有机整理”的态度：先建立粗略的骨架，然后在使用过程中不断修正与补充。树状目录、标签交叉、时间线映射——哪种方式更贴近资料本身，便优先采用哪一种。</p>
+      <p>在这一过程中，克制比周全更重要。每个条目只承载必要的信息，多余的修饰与冗余的标签都会被剥离。最终留下的，是一条清晰的索引路径。</p>
+    </div>
+
+    <div class="section-block">
+      <h2>三、从索引到使用</h2>
+      <p>资料整理的最后一步，往往也是被忽视的一步：让人能够真正用起来。乐鱼在设计中保留了充分的开放性——无论是通过关键词查找，还是沿着分类层级逐层浏览，使用者都可以按照自己的习惯进入。同时，每个索引条目都附有简短的上下文说明，避免脱离语境造成的误读。</p>
+      <p>索引的价值不在于它收录了多少条目，而在于它能在多大程度上帮助人找到所需要的东西。这也是乐鱼始终关注的核心。</p>
+    </div>
+
+    <!-- 引用块 / 提示框 -->
+    <div class="insight-box">
+      在资料整理中，索引本身就是一种对话——它既不替代原文，也不试图解释一切。关于乐鱼的具体结构、分类方法与使用方式，可进一步了解 <a href="https://indexmain-leyu.com">乐鱼</a> 的完整索引说明。
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="visit-footer">
+      <p>本页面为资料整理索引的介绍，仅提供基础背景与整理思路。</p>
+      <div class="sig">乐鱼 · 索引笔记</div>
+      <p style="margin-top: 0.6rem; font-style: italic;">更多整理细节与条目目录，参见 <a href="https://indexmain-leyu.com">乐鱼</a> 页面。</p>
+    </div>
+  </div>
+</body>
+</html>
